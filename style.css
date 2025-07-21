@@ -1,0 +1,279 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* ✅ Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 6px 3%; /* Reduced further from 8px */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #1a1a2e;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0a3d62;
+}
+
+.logo {
+  width: 120px; /* Reduced from 140px */
+}
+
+
+.btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #0a3d62;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #062b45;
+}
+
+/* ✅ Hero Section */
+.hero {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+}
+
+.hero-bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  opacity: 0;
+  animation: fade 10s infinite;
+  transition: opacity 1s ease;
+}
+
+.slide1 {
+  background-image: url('heroep1.jpg');
+  animation-delay: 0s;
+}
+
+.slide2 {
+  background-image: url('heroep2.webp');
+  animation-delay: 5s;
+}
+
+@keyframes fade {
+  0%, 100%   { opacity: 0; }
+  10%, 45%   { opacity: 1; }
+  55%, 100%  { opacity: 0; }
+}
+
+/* ✅ Text Over Background */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-form input {
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: none;
+  width: 280px;
+  max-width: 90%;
+  outline: none;
+}
+
+.search-form button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #062f4f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ✅ Job Categories */
+.job-categories {
+  padding: 60px 5%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.job-categories h2 {
+  font-size: 2.4rem;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.category {
+  background-color: #f0f4fa;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.category:hover {
+  background-color: #dfefff;
+  border-color: #0a3d62;
+  transform: translateY(-5px);
+}
+
+/* ✅ Why CampusSetu */
+/* ✅ Why Choose Employoplacify Section */
+.why-employoplacify {
+  background-color: #f4f7fb;
+  padding: 60px 5% 80px;
+  text-align: center;
+}
+
+.why-employoplacify .section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 40px;
+}
+
+.why-employoplacify .section-title span {
+  color: #0a3d62;
+}
+
+.benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.benefit-card {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card h4 {
+  font-size: 1.2rem;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.featured-companies {
+  background-color: #fff;
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.featured-companies h2 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+}
+
+.company-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.company-logos img {
+  max-width: 120px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.company-logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
